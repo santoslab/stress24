@@ -112,6 +112,8 @@ Manual Proofs / Rewriting Overview -- John or Stefan
 
 Extended exercise
 
+Other Verificaton Concepts Supported in Logika (?? where exactly would this go ??)
+
 ## A2 
 
 HAMR / GUMBO Overview -- John
