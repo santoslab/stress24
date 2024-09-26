@@ -38,15 +38,15 @@ Github repo of lecture examples and exercises
 
 # Proposed Schedule
 
-## M1
+## M1 (John)
 
-Slang Overview (10 mins) -- John
+Slang Overview (10 mins) 
   * Slang purpose and design goals
   * Slang use (implemenenting Sireum, HAMR context)
   * Slang language features (example based)
   * Pointers to more information
 
-Logika Overview (10 mins) -- John
+Logika Overview (10 mins)
   * Logika purpose and design goals
   * Logika use (Slang stand alone, HAMR context)
   * Logika GUI illustration
@@ -56,18 +56,18 @@ Logika Overview (10 mins) -- John
   * Advanced manual proof with rewriting examples (just viewing)
   * Teaching material
 
-Logika UI Principles -- Interactive (20 mins) -- John
+Logika UI Principles -- Interactive (20 mins) 
   * idea: 
     - students click around on bolts and bulbs in various examples, they seed various errors and show them being detected, etc.
     - this could be based on the Waypoint Example.  Note, if this is converted to Presentasi, then it could be broken into three sections 
       
-Logika Checking for Compositional Reasoning (15 mins) -- Interactive -- Stefan or John
+Logika Checking for Compositional Reasoning (15 mins) 
   * idea:
     - students are given partial program and the goal is to add method implementation, method clients, and contracts to illustrate compositional reasoning
 
 ???
 
-Extended exercise - Stefan
+Extended exercise 
   * idea:
     - students are given a description of code and specifications to write, potentially along with some starting content
     - slang/logika features
@@ -78,22 +78,25 @@ Extended exercise - Stefan
   * **What example should be used for this?**
 
 
-## M2
+## M2 (Stefan)
 
-Solution walkthrough of exercise given before break (5 mins)
+Solution walkthrough of exercise given before break (5 mins) (John)
 
 Logika Checking for Loops, Loop Invariants -- Interactive -- Stefan (15 mins)
   * idea: 
-    - students are presented with examples of sequences, quantification, index bounds checking, etc.
+    - students are presented with loops for integer calculations (summing, factorial)
 
 
 Logika Checking for Sequences, Quantification -- Interactive -- Stefan (15 mins)
   * idea: 
     - students are presented with examples of sequences, quantification, index bounds checking, etc.
+    - consider example to find max or min element in a sequence (as needed for insertion sort)
+
 
 Extended exercise - Stefan (25 mins)
   * idea:
     - students are given a description of code and specifications to write, potentially along with some starting content
+    - if we give the students the code for selection sort (as built up in previous activties, they could be asked to do bubble sort)
     - slang/logika features
       - loops, sequences, quantification
   * **What example should be used for this?**
@@ -113,6 +116,7 @@ Manual Proofs / Rewriting Overview -- John or Stefan
 Extended exercise
 
 Other Verificaton Concepts Supported in Logika (?? where exactly would this go ??)
+  - in the logika example of conformance-swap, there is a proof of equivalence between swapping by arithemetic and swapping by updates
 
 ## A2 
 
