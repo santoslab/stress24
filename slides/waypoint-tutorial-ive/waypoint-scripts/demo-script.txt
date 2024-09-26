@@ -1,0 +1,236 @@
+Start a script file
+ - Explain #Sireum and #Logika tags
+
+----------------
+// #Sireum #Logika  -- #Sireum indicates file is in Slang, #Logika tells the IVE to apply Logika checking
+
+import org.sireum._
+-----------------
+
+Define a variable
+Write an assertion
+
+Click on light bulb and lightning bolt annotations in margin
+Change assert claims or initial assignments to show how Logika
+ detects assertion violations
+
+-----------------
+var my_x = 50   // a variable identifier
+val my_y = 30   // a value identifier
+
+assert(my_x == 50)
+assert(my_y > 20)
+-----------------
+
+Illustrate how we can update a var but not a val
+Illustrate our previous assertion expression for my_x now causes a failure
+ because we updated the value for my_x
+
+Illustrate the At(..) notation
+
+-----------------
+my_x = my_x + 1
+// my_y = my_y + 1  // re-assignment to val identifier not allowed
+
+// assert(my_x == 50)  // Logika detects assertion violation
+assert(my_x > 50)
+-----------------
+
+=====
+// Suggested Exercises
+//  - define your own waypoint named myWayPoint
+//  - make an assertion expression that sums all three fields of the waypoint
+//     and compares to some desired upper bound that you wish to enforce
+=====
+
+
+Define a WayPoint data type, explain the syntax and the empty section for methods
+
+-----------------
+// Define datatype (immutable) for a 3-dimensional waypoint (similar to ML datatype)
+@datatype class WayPoint(x: Z, y: Z, z: Z)  // x,y,z are members of the class of Slang type Z (unbounded integers)
+{}  // no methods defined for this type
+
+// Construct a way point
+val wayPoint01 = WayPoint(30,30,50)
+
+// Make an assertion on a WayPoint field
+assert(wayPoint01.x < my_x)
+-----------------
+
+=====
+// Suggested Exercises
+//  - define your own waypoint named myWayPoint
+//  - make an assertion expression that sums all three fields of the waypoint
+//     and compares to some desired upper bound that you wish to enforce
+=====
+
+Add predicate to capture the condition of being "in Zone"
+Explain the concept of @strictpure (allows us to use the function in a Logika specification)
+
+Add an assert saying that wayPoint01 is inZone,
+then show way happens if we change wayPoint01 so that it is not in the zone.
+
+------------------
+@strictpure def inZone(wayPoint: WayPoint): B = // body of most strict pure functions is an expression
+      ((-100 <= wayPoint.x & wayPoint.x <= 100)
+    &  (-100 <= wayPoint.y & wayPoint.y <= 100)
+    &  (-100 <= wayPoint.z & wayPoint.z <= 100))
+
+assert(inZone(wayPoint01))
+------------------
+
+=====
+// Suggested exercises
+//  - create a waypoint that does not satisfy the inZone predicate and illustrate
+//    the failure with a failing assertion.  Then add a second assertion in which
+//    you assert that the waypoint is not inZone (this assertion should hold)
+=====
+
+
+
+Add method/function to operate on waypoints
+Note the syntax for datatype field "update" and
+  discuss that we are not destructively updating the object, but instead creating
+  a new version of it
+Add a call to the method
+Click on annotations in method body and note that these do no reference
+ variables outside of the method
+
+-----------------
+def moveForward(wayPoint: WayPoint): WayPoint = {
+  val x_new = wayPoint.x + 10
+  val wayPoint_new = wayPoint(x = x_new)
+  assert(wayPoint != wayPoint_new) // sanity check
+  return wayPoint_new
+}
+
+val wayPoint01moved = moveForward(wayPoint01)
+------------------
+
+=====
+// Suggested exercises
+//  - uncomment the print state and run the Slang script to show the effect of
+//    the move operation
+//  - assert that the y fields of wayPoint01 and wayPoint01moved are equal (==)
+//    Note: this assertion should fail, because Logika checks method
+//     compositionally and relies on method contract information to determine
+//     the facts known to method callers (we'll explain this in the next part)
+//  - click on the light bulb at the failing assertion to see the facts
+//    that Logika knows at that point.
+=====
+
+
+Add contract requiring that the moveForward operations always requires an inZone
+wayPoint
+
+------------------
+
+def moveForward(wayPoint: WayPoint): WayPoint = {
+  Contract(
+    // require that we are given a waypoint "in the zone"
+    Requires(inZone(wayPoint))
+  )
+  val x_new = wayPoint.x + 10  // change "10" to e.g., "12" to illustrate Logika finding error
+  val wayPoint_new = wayPoint(x = x_new)
+  return wayPoint_new
+}
+
+---------------------
+
+Show that callers have to satisfy the pre-condition
+
+---------------------
+moveForward(wayPoint01)
+moveForward(WayPoint(50,90,50))
+---------------------
+
+Try to strengthen the contract
+
+---------------------
+
+Add the following ensures clause and show that the
+method implementation does not satisfy it
+
+---------------------
+  Ensures(inZone(Res[WayPoint]))
+---------------------
+
+Add a different post-condition
+Show that the body satisfies the post-condition
+Make an error in the body to show that the post-condition is violated
+(e.g., subtract 10 instead of add 10)
+Click on the lightning bolt to show the sequent representing the post-condition
+
+---------------------
+    Ensures(Res[WayPoint].x > wayPoint.x,
+      Res[WayPoint].y == wayPoint.y,
+      Res[WayPoint].z == wayPoint.z)
+---------------------
+
+Reason about what the callers know about the method results
+
+---------------------
+
+assert(wayPoint01moved.y == wayPoint01.y)
+// assert(inZone(wayPoint01moved))                 // fails
+// assert(wayPoint01moved.x == wayPoint01.x + 10)  // fails
+
+=====
+// Suggested exercises
+//  Make an alternate version of the post-condition as follows, and show that
+//  the two failing assertions above now hold (explain why)
+//   Ensures(Res[WayPoint].x == wayPoint.x + 10
+//      Res[WayPoint].y == wayPoint.y,
+//      Res[WayPoint].z == wayPoint.z)
+=====
+
+#################  Part 6 - @datatype Invariant ###################
+
+Add an invariant to the WayPoint @datatype
+
+-----
+@datatype class WayPoint(x: Z, y: Z, z: Z)  // x,y,z are members of the class of Slang type Z (unbounded integers)
+ { // datatype invariant is checked for every constructor call
+   //  and assumed for every use
+   @spec def WayPoint_Inv = Invariant(
+      x >= -1000 &
+      y >= -1000 &
+      z >= -1000
+  )
+ }
+-----
+
+Such invariants must always hold for every value of the datatype.
+Thus, whenever you create a datatype, Logika will check that the
+invariant holds.
+
+----
+// illustrating datatype invariant enforcement
+val wayPoint03 = WayPoint(-984,-20,92)  // change "-984" to "-1084" to illustrate Logika finding error (pre-condition violation)
+----
+
+illustrate the effect of the invariant when using a datatype value
+
+----
+def arbitraryWayPoint_y(wp: WayPoint): Z = {
+  Contract(
+    Ensures(Res[Z] > -1100)
+  )
+  // the parameter wp is an arbitrary WayPoint, we don't know anything about it,
+  // other than the fact that it must satisfy the invariant
+  val local_x = wp.x
+  assert(local_x >= -1500) // holds, because invariant says that x coordinate of WayPoint must always be >= -1000
+  return wp.y
+}
+----
+
+// Suggested exercises
+//  - define a datatype Point with x and y coordinates.
+//    Include an invariant that states that x always lies between -50 and 50 (inclusive)
+//      and y is less than x
+//  - create some code that shows Logika enforcing the invariant, i.e.,
+//     valid Points can be created, but invalid Points are flagged as errors
+
+
+

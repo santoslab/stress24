@@ -1,0 +1,37 @@
+* Explain that, instead of a Slang script, we are now in a multi-file Slang project
+(behind the scenes, it uses the Sireum Proyek build system, which we will learn about later).
+
+While Slang scripts allow us to quickly experiment with concepts, for
+realistic development, we use Slang/Proyek-projects.
+
+* Explain that
+    - source code files are in main/scala
+    - test files are in test/scala
+
+* Look at WayPointLib -- this code is similar to what we had in the script files
+
+* Suppose we want to write a test for the moveForward method.  Let's look in
+  WaypointTest
+
+  - run the first test at line 12
+  - seed an error (either in the code or in the expected result and show what it looks like)
+
+* We know that our method is not designed to take certain values as input.
+The method is designed to only work on values that satisfy the pre-condition.
+So we will often adopt various strategies for throwing a test input away (without considering
+the test to be a failing test) if the input doesn't satisfy the pre-condition.
+
+We can use ScalaTest's built-in "assume" construct for that
+
+* Look at WayPointXContracts (executable contracts).   One of the things that we
+will emphasize in out class is writing contracts that we can use for both verification
+and testing.  Look at the testWithOracle test
+
+* App_Types_Gen - discuss using the ScalaCheck framework to generate random values
+
+* WaypointTestScalaCheckAsScalaTest - automatically test the method against the
+contract-derived oracle with 10,000 randomly generated WayPoint values
+
+
+
+
