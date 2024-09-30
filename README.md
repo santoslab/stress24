@@ -31,6 +31,7 @@ We want the video and instructions to be reusable, so it shouldn't be tied to ST
 ## STRESS Example repository (robby/john)
 
 Github repo of lecture examples and exercises
+  * Currated collection of examples to illustrate nice / advanced Slang/Logika features (as suggested by Stefan)
 
 ## Documentation for Slang and Logiak
 
@@ -64,12 +65,19 @@ Logika UI Principles -- Interactive (20 mins)
 Logika Checking for Compositional Reasoning (15 mins) 
   * idea:
     - students are given partial program and the goal is to add method implementation, method clients, and contracts to illustrate compositional reasoning
+    - guided exercise 
 
-???
+Features Overview 
+  - datatypes / records
+  - ???
+  - point them to folder of examples
 
 Extended exercise 
   * idea:
     - students are given a description of code and specifications to write, potentially along with some starting content
+    - possible example: 
+      - parts of Stefan's fibonacci example
+      - max3 directly, and max3 in terms of max2
     - slang/logika features
       - conditionals
       - contracts
@@ -100,6 +108,15 @@ Extended exercise - Stefan (25 mins)
     - slang/logika features
       - loops, sequences, quantification
   * **What example should be used for this?**
+
+
+Possible progression
+  - findMin - sequences, quantification
+  - swap - mutable 
+  - selection sort 
+  ==>
+  - bubble sort
+
 
 ## A1
 
