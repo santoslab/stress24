@@ -18,6 +18,6 @@ def max2(x:Z, y:Z): Z = {
 
   // Exercise 2
   // Assert that max is greater or equal to x and max is greater than or equal to y
-  
+
   return max
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="536bfff5-ef67-447a-9d11-d1f6945fb615" manual="true">
+    <element uuid="25de16f8-4ce3-46b9-8ae8-47fcdc01d8ac" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>current_tempWstatus</seg>
+      </bo>
+      <position y="188.0"/>
+    </element>
+    <element uuid="e7af62d1-f55a-4381-9279-4326d7f2d667" manual="true" dockArea="right">
+      <bo>
+        <seg>feature</seg>
+        <seg>heat_control</seg>
+      </bo>
+      <position x="294.6145782470703" y="88.0"/>
+    </element>
+    <element uuid="0c216717-e591-4057-87a9-186c75073b43" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>lower_desired_temp</seg>
+      </bo>
+      <position y="88.0"/>
+    </element>
+    <element uuid="ffa3dff5-6d64-4486-8e54-d3a683c54fea" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>regulator_mode</seg>
+      </bo>
+      <position y="138.0"/>
+    </element>
+    <element uuid="9fd188dc-5a80-46dd-b2de-3e03141fbbe5" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>upper_desired_temp</seg>
+      </bo>
+      <position y="38.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>Manage_Heat_Source</seg>
+    </bo>
+    <position/>
+    <size width="380.0" height="240.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>Regulate::Manage_Heat_Source</seg>
+    </context>
+  </config>
+</diagram:Diagram>
