@@ -123,7 +123,7 @@ object Manage_Heat_Source_impl_thermostat_regulate_temperature_manage_heat_sourc
         } else if (currentTemp.value < lower.value) {
           // REQ-MHS-2
           // currentCmd = Isolette_Data_Model.On_Off.Off // seeded bug/error
-          currentCmd = Isolette_Data_Model.On_Off.Off
+          currentCmd = Isolette_Data_Model.On_Off.Onn
         }
 
       // otherwise currentCmd defaults to lastCmd (REQ-MHS-4)
