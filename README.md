@@ -1,146 +1,68 @@
 # stress24
-Github for materials for STRESS 2024 
 
-# Expected Schedule Structure
+This repository contains lecture materials (slides and example code)
+for STRESS 2024 lectures on "Developer-friendly Integrated Coding and
+Verification with Slang and Logika"  
 
-Morning Session #1 (M1): 1.5 hours
+## Lecturers
 
-Morning Session #2 (M2): 1 hour
+* John Hatcliff - Kansas State University
+* Stefan Hallerstede - Aarhus University
 
-Lunch (2 hour break)
+with remote assistance from
+* Robby - Kansas State University
+* Jason Belt - Kansas State University
 
-Afternoon Session #1 (A1) 1.5 hours
+## Abstract
 
-Afternoon Session #2 (A2) 1 hour
+Developing verified code for embedded systems is challenging.  To be
+effective, code should be both (a) clean and include abstractions
+amenable to verification as well as (b) efficient
+and predicatable with respect to execution speed and resource
+utilization.
 
-*Note*: It could be the case that every session is 1.5 hours, or at least M2 is 1.5 hours.   At this point, I think it is best to plan for less time, since the lectures/exercises tend to take more time than expected.
+This series of tutorials presents the Slang programming
+language (a safety-critical subset of Scala) and its
+accompanying verification framework called Logika.
+Slang is designed to support software contract-based verification but
+can also be transpiled to C and Rust to obtain
+effective embedded system implementations.  The Logika
+verifier is supported by a sophisticated integrated
+development environment within the IntelliJ IDE
+that provides a number of useful visualizations of
+contract verification status, automatically discovered
+program facts, and developer-friendly displays of how
+program constraints are converted to SMT queries.
+Slang/Logika are also unique in that they support
+an integrated language for manual program proofs to complement
+automated SMT-based verification.
+Logika also provides a programmer-friendly interface to the 
+SMT-based proof support. As a consequence, the tool can also be used 
+without prior education in theorem proving.
 
-# Infrastructure Preparation
+Development of Slang and Logika has been funded via several
+industry partnerships with US defense companies.
+We will conclude with an overview of industry-research
+applications of Slang and Logika and its ongoing integration
+with Rust verification.  This overview will include
+walkthroughs of model-driven development of medical devices
+and applications within US aerospace companies.
 
-## Installation (robby)
+## Useful Links
 
-* Written installation instructions to be mailed to participants 1-2 weeks before meeting
-  - download and install
-  - loading up existing files / models to confirm that tools are working appropriately
+* Tool installation instructions
+* Schedule of Lecture Content and Student Activities
 
-* Video (optional)
-  - It would be ideal to develop a reusable Presentasi-based video for installing and loading initial example.  
-  
-We want the video and instructions to be reusable, so it shouldn't be tied to STRESS or STRESS examples.
-
-## STRESS Example repository (robby/john)
-
-Github repo of lecture examples and exercises
-  * Currated collection of examples to illustrate nice / advanced Slang/Logika features (as suggested by Stefan)
-
-## Documentation for Slang and Logiak
-
-??? What is the best we can do for this.
-
-# Proposed Schedule
-
-## M1 (John)
-
-Slang Overview (10 mins) 
-  * Slang purpose and design goals
-  * Slang use (implemenenting Sireum, HAMR context)
-  * Slang language features (example based)
-  * Pointers to more information
-
-Logika Overview (10 mins)
-  * Logika purpose and design goals
-  * Logika use (Slang stand alone, HAMR context)
-  * Logika GUI illustration
-  * Logika scalability
-  * Contract example (just viewing)
-  * Deduce examples (just viewing)
-  * Advanced manual proof with rewriting examples (just viewing)
-  * Teaching material
-
-Logika UI Principles -- Interactive (20 mins) 
-  * idea: 
-    - students click around on bolts and bulbs in various examples, they seed various errors and show them being detected, etc.
-    - this could be based on the Waypoint Example.  Note, if this is converted to Presentasi, then it could be broken into three sections 
-      
-Logika Checking for Compositional Reasoning (15 mins) 
-  * idea:
-    - students are given partial program and the goal is to add method implementation, method clients, and contracts to illustrate compositional reasoning
-    - guided exercise 
-
-Features Overview 
-  - datatypes / records
-  - ???
-  - point them to folder of examples
-
-Extended exercise 
-  * idea:
-    - students are given a description of code and specifications to write, potentially along with some starting content
-    - possible example: 
-      - parts of Stefan's fibonacci example
-      - max3 directly, and max3 in terms of max2
-    - slang/logika features
-      - conditionals
-      - contracts
-      - method calls
-    - pitfalls: need to make sure that students have enough documentation.
-  * **What example should be used for this?**
-
-
-## M2 (Stefan)
-
-Solution walkthrough of exercise given before break (5 mins) (John)
-
-Logika Checking for Loops, Loop Invariants -- Interactive -- Stefan (15 mins)
-  * idea: 
-    - students are presented with loops for integer calculations (summing, factorial)
-
-
-Logika Checking for Sequences, Quantification -- Interactive -- Stefan (15 mins)
-  * idea: 
-    - students are presented with examples of sequences, quantification, index bounds checking, etc.
-    - consider example to find max or min element in a sequence (as needed for insertion sort)
-
-
-Extended exercise - Stefan (25 mins)
-  * idea:
-    - students are given a description of code and specifications to write, potentially along with some starting content
-    - if we give the students the code for selection sort (as built up in previous activties, they could be asked to do bubble sort)
-    - slang/logika features
-      - loops, sequences, quantification
-  * **What example should be used for this?**
-
-
-Possible progression
-  - findMin - sequences, quantification
-  - swap - mutable 
-  - selection sort 
-  ==>
-  - bubble sort
-
-
-## A1
-
-Manual Proofs / Rewriting Overview -- John or Stefan
-  * idea:
-    - students are given completed examples of rewriting, etc.
-    - slang/logika features
-      - rewriting, rules
-  * **What example should be used for this?**
-
-???
-
-
-Extended exercise
-
-Other Verificaton Concepts Supported in Logika (?? where exactly would this go ??)
-  - in the logika example of conformance-swap, there is a proof of equivalence between swapping by arithemetic and swapping by updates
-
-## A2 
-
-HAMR / GUMBO Overview -- John
-
-Extended exercise (based on Isolette)
-
+Supporting information
+* [Sireum home page](https://sireum.org), including links to Slang and
+  Logika information
+* [HAMR home page](https://hamr.sireum.org)  
+* [Slang overview paper](https://people.cs.ksu.edu/~hatcliff/Papers/Robby-Hatcliff-ISOLA2021-Slang-Overview.pdf)
+* [Logika overview paper](https://people.cs.ksu.edu/~hatcliff/Papers/Robby-etal-FMICS2024-Logika-Overview.pdf)
+* [Teaching with Logika paper](https://people.cs.ksu.edu/~hatcliff/Papers//Hallerstede-etal-FMTEA2024-Logika-Education.pdf)
+* [Online textbook](https://textbooks.cs.ksu.edu/cis301/) for undergraduate teaching with Logika
+* [HAMR development for safety critical systems](https://isolette.santoslab.org) illustrated using
+  Isolette example -- industry training and graduate teaching
 
 
 

@@ -32,12 +32,38 @@ This session will introduce you to the Slang programming language (safety-critic
   * Slides (XXX insert link XXX)
 
 **Walkthrough of Slang/Logika features using the Waypoint example**  
-  * Follow along in the Slang scripts in the `waypoint-scripts` folder.  Simple exercises for you to try are presented in the comments in each file.
+
+This lecture module (a) introduces you the Slang language features (b)
+illustrates the basic aspects of interacting with Logika verification.
+
+* Follow along in the Slang scripts in the `waypoint-scripts`
+  folder.  As the lecture progresses, 
+    * open each file, 
+    * guided by the lecturer, click on the various Logika annotations to see the
+      verification information produced by Logika,
+    * guided by the lecturer, make simple modifications to the scripts (e.g., insert bugs)
+      to see how Logika detects problems.
+
+**Exercises**
+
+In comments in each file, simple exercises are suggested for you on
+your own.
 
 **Logika Verification of Conditional Expressions**
 
-  * Slides
-  * Examples
+This lecture module explores the basic principles for reasoning about
+*conditional statements*.  We starting by doing a walkthrough of
+Logika applied to existing code.  Then you are given some exercises
+for you to do on your own.
+
+  * Slides (XXX insert link XXX)
+  * Examples (XXX insert link XXX)
+
+**Exercises**
+
+We will take a small break in the lecture to allow you to do the
+following exercises.
+
 
 **Logika Verification of Method Contracts**
 
