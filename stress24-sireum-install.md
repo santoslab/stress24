@@ -1,4 +1,30 @@
-# Sireum for STRESS 2024
+# Developer-friendly Integrated Coding and Verification with Slang and Logika -- Tool Installation
+
+Below are installation instructions from the Sireum tools that support
+the STRESS 2024 lectures "Developer-friendly Integrated Coding and
+Verification with Slang and Logika" from Kansas State and Aarhus
+Universities.
+
+These steps...
+* create folders `~/Applications` and `~/Downloads` (if they already
+  exist, the "-p" option in `mkdir` ensures that existing folders will
+  be used in subsequent steps).
+* download necessary tarballs using `curl`
+* install Sireum executables and support files in
+  `~/Applications/Sireum` (by tar-extracting `sireum-ive-xxxx`)
+* sets and populates up a Maven repository cache in a folder `~/.m2`
+  (by tar-extracting `org.sireum.m2.zip`)
+  (this ensures that you will be able to build Sireum examples even if
+  you have no internet connection (or a slow connection) at the STRESS
+  venue)
+
+The Sireum collection of tools contain...
+* The Sireum Integrated Verification Environment (IVE) - a customized
+  IntelliJ IDE for working with Slang (a safety-critical subset of
+  Scala) and Logika (a symbolic execution-based verifier for Slang)
+* Slang language infrastructure
+* HAMR model-driven development framework
+Slang, Logika, and HAMR will be discussed extensively during the lectures.  
 
 ## Installation
 
@@ -56,6 +82,11 @@
   ```
   
 ## Testing Installation
+
+It will be helpful if you can test your installation.  To do this, you
+can retrieve (via git clone) a repository of Logika examples and then
+run a script that applies Logika to verify all of the examples (in
+batch mode).
 
 * **macOS/Linux**:
 
