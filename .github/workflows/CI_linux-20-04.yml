@@ -1,4 +1,4 @@
-name: Linux 22.04 (amd64)
+name: Linux 20.04 (amd64)
 
 on:
   push:
