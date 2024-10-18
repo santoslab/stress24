@@ -1,43 +1,8 @@
 # stress24
-Github for materials for STRESS 2024 
 
-# Expected Schedule Structure
+This file contains instructor notes for the STRESS 2024 lectures on Logika
 
-Morning Session #1 (M1): 1.5 hours
-
-Morning Session #2 (M2): 1 hour
-
-Lunch (2 hour break)
-
-Afternoon Session #1 (A1) 1.5 hours
-
-Afternoon Session #2 (A2) 1 hour
-
-*Note*: It could be the case that every session is 1.5 hours, or at least M2 is 1.5 hours.   At this point, I think it is best to plan for less time, since the lectures/exercises tend to take more time than expected.
-
-# Infrastructure Preparation
-
-## Installation (robby)
-
-* Written installation instructions to be mailed to participants 1-2 weeks before meeting
-  - download and install
-  - loading up existing files / models to confirm that tools are working appropriately
-
-* Video (optional)
-  - It would be ideal to develop a reusable Presentasi-based video for installing and loading initial example.  
-  
-We want the video and instructions to be reusable, so it shouldn't be tied to STRESS or STRESS examples.
-
-## STRESS Example repository (robby/john)
-
-Github repo of lecture examples and exercises
-  * Currated collection of examples to illustrate nice / advanced Slang/Logika features (as suggested by Stefan)
-
-## Documentation for Slang and Logiak
-
-??? What is the best we can do for this.
-
-# Proposed Schedule
+# Schedule
 
 ## M1 (John)
 

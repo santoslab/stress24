@@ -5,9 +5,11 @@
 
 ### Install and Confirm Installation with Examples
 
-Make sure that have installed Sireum -- download and installation instructions can be found here XXXXXX
+Make sure that have installed Sireum -- the download and installation instructions can be found [here](stress24-logika-tool-installation.md) 
 
-Confirm that your installation is set up correctly
+## Opening the Logika examples in the Sireum IVE
+
+*** Need to double-check this content with Robby ***
 
 * (Navigate to the Sireum IVE application and launch)
 
@@ -26,9 +28,13 @@ Confirm that your installation is set up correctly
 This session will introduce you to the Slang programming language (safety-critical subset of Scala) and the Logika program verifier for Slang.  You will learn basic aspects of the Sireum Integrated Verification Environment (IVE) interface and aspects of the Slang programming language -- building up to some simple exercises using conditional expressions and method calls.
 
 **Overview of Slang** 
+
+This lecture module is a slide-only overview of Slang.
   * Slides (XXX insert link XXX)
 
 **Overview of Logika** 
+
+This lecture module is a slide-only overview of Logika.
   * Slides (XXX insert link XXX)
 
 **Walkthrough of Slang/Logika features using the Waypoint example**  
@@ -43,6 +49,8 @@ illustrates the basic aspects of interacting with Logika verification.
       verification information produced by Logika,
     * guided by the lecturer, make simple modifications to the scripts (e.g., insert bugs)
       to see how Logika detects problems.
+
+ * Supplementary slides describing aspects of the Sireum IVE (XXX insert link XXX)
 
 **Exercises**
 
@@ -63,7 +71,6 @@ for you to do on your own.
 
 We will take a small break in the lecture to allow you to do the
 following exercises.
-
 
 **Logika Verification of Method Contracts**
 
