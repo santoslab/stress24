@@ -2,6 +2,7 @@
 import org.sireum._
 import org.sireum.justification._
 
+// List trait with some basic list functionality implemented.
 @datatype trait List[T] {
 
   @strictpure def length: Z = this match {
@@ -19,7 +20,6 @@ import org.sireum.justification._
     case _ => List.Nil()
   }
 
-  // I have changed this implementation so that I get more algebraic rewriting.
   @strictpure def ++(l2: List[T]): List[T] = this match {
     case List.Cons(value, next) => List.Cons(value, next ++ l2)
     case _ => l2
@@ -43,7 +43,8 @@ import org.sireum.justification._
     List.empty
   }
 
-  // My implementation of "reverse" using ++ to avoid introducing and accumulator argument.
+  // Implementation of "reverse" using ++ to avoid introducing
+  // an accumulator argument.
   @strictpure def rev: List[T] = this match {
     case List.Cons(value, next) => next.rev ++ List.make(value)
     case _ => this
@@ -59,11 +60,6 @@ object List {
   @strictpure def make[T](value: T): List[T] = Cons(value, Nil())
 
   @strictpure def empty[T]: List[T] = Nil()
-
-  @abs def app[T](x: List[T], y: List[T]): List[T] = x match {
-    case Cons(value, next) => Cons(value, app(next, y))
-    case _ => y
-  }
 
   @pure def lengthAtLeastZero[T](l: List[T]): Unit = {
     Contract(
@@ -102,6 +98,7 @@ object List {
     }
   }
 
+  // Lemma: Appending the empty list to a list yields that list.
   @pure def appNil[T](x: List[T]): Unit = {
     Contract(
       Ensures((x ++ Nil[T]()) ≡ x)
@@ -112,6 +109,7 @@ object List {
     }
   }
 
+  // Lemma: Appending lists is associative.
   @pure def appAssoc[T](x: List[T], y: List[T], z: List[T]): Unit = {
     Contract(
       Ensures(((x ++ y) ++ z) ≡ (x ++ (y ++ z)))
@@ -145,6 +143,9 @@ object List {
     }
   }
 
+  // Variant of preceding lemma with unstructured proof.
+  // 'Assert' makes proof easier to write and read.
+  // Not used. Only stated for didactic reasons.
   @pure def appAssoc1[T](x: List[T], y: List[T], z: List[T]): Unit = {
     Contract(
       Ensures(((x ++ y) ++ z) == (x ++ (y ++ z)))
@@ -176,6 +177,8 @@ object List {
     }
   }
 
+  // Lemma: Skewed distributivity of ++ and rev.
+  // Uses lemmas appNil and appAssoc.
   @pure def revApp[T](x: List[T], y: List[T]): Unit = {
     Contract(
       Ensures((x ++ y).rev ≡ (y.rev ++ x.rev))
@@ -190,7 +193,7 @@ object List {
           4 (List.Cons(value, next ++ y).rev ≡ ((next ++ y).rev ++ List.make(value))) by Simpl,
           5 ((List.Cons(value, next) ++ y) ≡ List.Cons(value, next ++ y)) by Simpl,
           6 ((x ++ y) ≡ List.Cons(value, next ++ y)) by Subst_>(2, 5),
-          7 ((x ++ y).rev ≡ List.Cons(value, next ++ y).rev) by Simpl and (6),//Subst_<(6, 7),
+          7 ((x ++ y).rev ≡ List.Cons(value, next ++ y).rev) by Simpl and (6),
           8 (List.Cons(value, next ++ y).rev ≡ ((y.rev ++ next.rev) ++ List.make(value))) by Subst_<(1, 4),
           9 (List.Cons(value, next ++ y).rev ≡ (y.rev ++ (next.rev ++ List.make(value)))) by Rewrite(RS(appAssoc _), 8),
           10 ((y.rev ++ (next.rev ++ List.make(value))) ≡ (y.rev ++ Cons(value, next).rev)) by Auto,
@@ -211,7 +214,10 @@ object List {
     }
   }
 
-  // This is what I want to prove. And I need the two lemmas above for the proof.
+  // Theorem: Idempotence of rev.
+  // This is the actual objective.
+  // All other properties are only proved to obtain this result.
+  // Uses lemma revApp.
   @pure def rev_prop[T](l: List[T]): Unit = {
     Contract(
       Ensures(l.rev.rev ≡ l)
