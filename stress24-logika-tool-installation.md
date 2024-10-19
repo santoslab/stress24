@@ -110,7 +110,7 @@ batch mode).
 
   ```org.sireum.version.z3=v4.11.2 ```
 
-  You can refer to the Ubunutu 20.04 CI [here](.github/workflows/CI_linux-20-04.yml#L25-L28) for more information.
+  You can refer to the Ubuntu 20.04 CI [here](.github/workflows/CI_linux-20-04.yml#L25-L28) for more information.
 
 * **Windows**:
   
