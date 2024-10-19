@@ -9,7 +9,7 @@
 [![Windows (amd64)](https://github.com/santoslab/stress24/actions/workflows/CI-windows.yml/badge.svg)](https://github.com/santoslab/stress24/actions/workflows/CI-windows.yml)
 
 
-Below are installation instructions from the Sireum tools that support
+Below are installation instructions for the Sireum tools that support
 the STRESS 2024 lectures "Developer-friendly Integrated Coding and
 Verification with Slang and Logika" from Kansas State and Aarhus
 Universities.
@@ -106,7 +106,7 @@ batch mode).
   "${SIREUM_HOME}/bin/sireum" proyek ive logika-examples
   ```
   
-  If the verify.cmd script emits "erroneous errors" on Linux then your distribution may not support the latest version of Z3 (e.g. Ubunutu 20.04, Debian 12). As a workaround you can instruct Sireum to install a compatible Z3 version by modifying the Z3 entry in ``$SIREUM_HOME/versions.properties`` as follows:
+  If the verify.cmd script emits "erroneous errors" on Linux then your distribution may not support the latest version of Z3 (e.g. Ubuntu 20.04, Debian 12). As a workaround you can instruct Sireum to install a compatible Z3 version by modifying the Z3 entry in ``$SIREUM_HOME/versions.properties`` as follows:
 
   ```org.sireum.version.z3=v4.11.2 ```
 
