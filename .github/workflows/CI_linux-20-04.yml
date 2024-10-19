@@ -22,9 +22,9 @@ jobs:
 
           export SIREUM_HOME=~/Applications/Sireum
 
-          # z3 4.12+ requires glibc > 2.31 but ubuntu 20.04 and Debian 12 requires
+          # z3 4.12+ requires glibc > 2.31 but ubuntu 20.04 and Debian 12 provides
           # glibc v2.31 so replace the z3 entry in versions.properties such that 
-          # sireum will  download/install z3 4.11.2
+          # sireum will download/install z3 4.11.2
           sed -i '/.*z3.*/c\org.sireum.version.z3=4.11.2' $SIREUM_HOME/versions.properties
 
           git clone https://github.com/sireum/logika-examples
