@@ -38,7 +38,7 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   cd ~/Applications
   tar xf ~/Downloads/sireum-ive-linux-amd64.tar.xz
   cd ~
-  tar xf ~/Downloads/org.sireum.library.m2.zip
+  unzip xf ~/Downloads/org.sireum.library.m2.zip
   ```
 
 * **macOS (arm64)**:
