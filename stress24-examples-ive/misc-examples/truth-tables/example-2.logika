@@ -1,0 +1,11 @@
+//@Logika: --background type
+
+      *
+---------------
+p  #  !(p & !p)
+---------------
+T  #  T   F F
+F  #  T   F T
+---------------
+
+Tautology
