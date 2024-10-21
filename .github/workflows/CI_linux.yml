@@ -16,9 +16,9 @@ jobs:
           curl -JLso ~/Downloads/sireum-ive-linux-amd64.tar.xz https://github.com/sireum/kekinian/releases/download/$SIREUM_V/sireum-ive-linux-amd64.tar.xz
           curl -JLso ~/Downloads/org.sireum.library.m2.zip https://github.com/sireum/kekinian/releases/download/$SIREUM_V/org.sireum.library.m2.zip  
           cd ~/Applications
-          tar xf ~/Downloads/sireum-ive-linux-amd64.tar.xz
+          tar xf ~/Downloads/sireum-ive-linux-amd64.tar.xz 2> /dev/null
           cd ~
-          unzip ~/Downloads/org.sireum.library.m2.zip
+          unzip -qq ~/Downloads/org.sireum.library.m2.zip
 
           export SIREUM_HOME=~/Applications/Sireum
           git clone https://github.com/sireum/logika-examples

@@ -1,6 +1,15 @@
 # Developer-friendly Integrated Coding and Verification with Slang and Logika -- Tool Installation
+[![Linux 24.04 (amd64)](https://github.com/santoslab/stress24/actions/workflows/CI_linux.yml/badge.svg)](https://github.com/santoslab/stress24/actions/workflows/CI_linux.yml)
+[![Linux 22.04 (amd64)](https://github.com/santoslab/stress24/actions/workflows/CI_linux-22-04.yml/badge.svg)](https://github.com/santoslab/stress24/actions/workflows/CI_linux-22-04.yml)
+[![Linux 20.04 (amd64)](https://github.com/santoslab/stress24/actions/workflows/CI_linux-20-04.yml/badge.svg)](https://github.com/santoslab/stress24/actions/workflows/CI_linux-20-04.yml)
 
-Below are installation instructions from the Sireum tools that support
+[![macOS (arm64)](https://github.com/santoslab/stress24/actions/workflows/CI-macOS.yml/badge.svg)](https://github.com/santoslab/stress24/actions/workflows/CI-macOS.yml)
+[![macOS (amd64)](https://github.com/santoslab/stress24/actions/workflows/CI-macOS-amd.yml/badge.svg)](https://github.com/santoslab/stress24/actions/workflows/CI-macOS-amd.yml)
+
+[![Windows (amd64)](https://github.com/santoslab/stress24/actions/workflows/CI-windows.yml/badge.svg)](https://github.com/santoslab/stress24/actions/workflows/CI-windows.yml)
+
+
+Below are installation instructions for the Sireum tools that support
 the STRESS 2024 lectures "Developer-friendly Integrated Coding and
 Verification with Slang and Logika" from Kansas State and Aarhus
 Universities.
@@ -36,9 +45,9 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   curl -JLso ~/Downloads/sireum-ive-linux-amd64.tar.xz https://github.com/sireum/kekinian/releases/download/$SIREUM_V/sireum-ive-linux-amd64.tar.xz
   curl -JLso ~/Downloads/org.sireum.library.m2.zip https://github.com/sireum/kekinian/releases/download/$SIREUM_V/org.sireum.library.m2.zip  
   cd ~/Applications
-  tar xf ~/Downloads/sireum-ive-linux-amd64.tar.xz
+  tar xf ~/Downloads/sireum-ive-linux-amd64.tar.xz 2> /dev/null
   cd ~
-  unzip xf ~/Downloads/org.sireum.library.m2.zip
+  unzip -qq xf ~/Downloads/org.sireum.library.m2.zip
   ```
 
 * **macOS (arm64)**:
@@ -97,6 +106,12 @@ batch mode).
   "${SIREUM_HOME}/bin/sireum" proyek ive logika-examples
   ```
   
+  If the verify.cmd script emits "erroneous errors" on Linux then your distribution may not support the latest version of Z3 (e.g. Ubuntu 20.04, Debian 12). As a workaround you can instruct Sireum to install a compatible Z3 version by modifying the Z3 entry in ``$SIREUM_HOME/versions.properties`` as follows:
+
+  ```org.sireum.version.z3=v4.11.2 ```
+
+  You can refer to the Ubuntu 20.04 CI [here](.github/workflows/CI_linux-20-04.yml#L25-L28) for more information.
+
 * **Windows**:
   
   ```shell
