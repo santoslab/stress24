@@ -38,6 +38,9 @@ assert(wayPoint01.x < my_x)
 
 assert(inZone(wayPoint01))
 
+// Activity
+//. - change the Z coordinate of wayPoint01 to 150 and observe the assertion violation
+
 // Suggested exercises
 //  - create a waypoint that does not satisfy the inZone predicate and illustrate
 //    the failure with a failing assertion.  Then add a second assertion in which

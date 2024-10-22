@@ -26,6 +26,10 @@ val wayPoint01 = WayPoint(30,30,50)
 // Make an assertion on a WayPoint field
 assert(wayPoint01.x < my_x)
 
+// Activity
+//. - change the WayPoint X coordinate to 50 - the assertion is still satisfied
+//. - change the WayPoint X coordinate to 51 - the assertion is violated
+
 // Suggested Exercises
 //  - define your own waypoint named myWayPoint
 //  - make an assertion expression that sums all three fields of the waypoint

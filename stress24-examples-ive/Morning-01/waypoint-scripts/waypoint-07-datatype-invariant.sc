@@ -18,13 +18,12 @@ assert(my_x > 50)
 
 // Define datatype (immutable) for a 3-dimensional waypoint (similar to ML datatype)
 @datatype class WayPoint(x: Z, y: Z, z: Z)  // x,y,z are members of the class of Slang type Z (unbounded integers)
- { // invariant added in Part 6
+ { // invariant added in Part 7
    @spec def WayPoint_Inv = Invariant(
-     x >= -1000 &
+       x >= -1000 &
        y >= -1000 &
        z >= -1000
-   )
- }  // no methods defined for this type
+   ) }  // no methods defined for this type
 
 // Construct a way point
 val wayPoint01 = WayPoint(30,30,50)
@@ -86,7 +85,9 @@ assert(wayPoint01moved.y == wayPoint01.y)
 // assert(inZone(wayPoint01moved))
 // assert(wayPoint01moved.x == wayPoint01.x + 10)
 
-// ---- Part 6 (datatype invariant) -----
+// ---- Part 6 (quantification and Deduce) (omitted) -----
+
+// ---- Part 7 (datatype invariant) -----
 
 // add a datatype invariant to the WayPoint data type above
 
@@ -101,7 +102,7 @@ assert(wayPoint01moved.y == wayPoint01.y)
 //}
 
 // illustrating datatype invariant enforcement
-val wayPoint03 = WayPoint(-984,-20,92)  // change "-984" to "-1084" to illustrate Logika finding error (pre-condition violation)
+val wayPoint04 = WayPoint(-984,-20,92)  // change "-984" to "-1084" to illustrate Logika finding error (pre-condition violation)
 
 // illustrate the effect of the invariant when using a datatype value
 

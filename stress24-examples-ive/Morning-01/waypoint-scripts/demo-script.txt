@@ -185,7 +185,7 @@ assert(wayPoint01moved.y == wayPoint01.y)
 //      Res[WayPoint].z == wayPoint.z)
 =====
 
-#################  Part 6 - @datatype Invariant ###################
+#################  Part 7 - @datatype Invariant ###################
 
 Add an invariant to the WayPoint @datatype
 
@@ -207,7 +207,7 @@ invariant holds.
 
 ----
 // illustrating datatype invariant enforcement
-val wayPoint03 = WayPoint(-984,-20,92)  // change "-984" to "-1084" to illustrate Logika finding error (pre-condition violation)
+val wayPoint04 = WayPoint(-984,-20,92)  // change "-984" to "-1084" to illustrate Logika finding error (pre-condition violation)
 ----
 
 illustrate the effect of the invariant when using a datatype value
