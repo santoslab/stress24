@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Test
         run: |
-          export SIREUM_V=4.20241017.f6e1eff
+          export SIREUM_V=dev
           mkdir -p ~/Applications ~/Downloads
           curl -JLso ~/Downloads/sireum-ive-mac-arm64.tar.xz https://github.com/sireum/kekinian/releases/download/$SIREUM_V/sireum-ive-mac-arm64.tar.xz
           curl -JLso ~/Downloads/org.sireum.library.m2.zip https://github.com/sireum/kekinian/releases/download/$SIREUM_V/org.sireum.library.m2.zip  

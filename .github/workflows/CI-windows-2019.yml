@@ -12,7 +12,7 @@ jobs:
       - name: Test
         shell: cmd
         run: |
-          set SIREUM_V=4.20241017.f6e1eff
+          set SIREUM_V=dev
           md "%USERPROFILE%\Applications" "%USERPROFILE%\Downloads" 2> nul
           curl -JLso %USERPROFILE%\Downloads\sireum-ive-win-amd64.zip https://github.com/sireum/kekinian/releases/download/%SIREUM_V%/sireum-ive-win-amd64.zip
           curl -JLso %USERPROFILE%\Downloads\org.sireum.library.m2.zip https://github.com/sireum/kekinian/releases/download/%SIREUM_V%/org.sireum.library.m2.zip  
