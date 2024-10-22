@@ -59,7 +59,7 @@ The `.idea` folder is listed in the `.gitignore` file, so it will not be added t
 ### Illustrating Basic Slang/Logika Concepts using Slang Scripts
 
 Basic aspects of Slang and Logika are illustrated using the Slang scripts (special forms of Scala scripts) in the 
-[waypoint-scripts](waypoint-scripts) folder.   The scripts start with a starting file and then successively add addition
+[waypoint-scripts](Morning-01/waypoint-scripts) folder.   The scripts start with a starting file and then successively add addition
 features.  
 
 To **run a script**, 
