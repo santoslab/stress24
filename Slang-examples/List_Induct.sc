@@ -65,35 +65,10 @@ object List {
     Contract(
       Ensures(l.length >= 0)
     )
-
     (l: @induct) match {
       case Cons(value, next) =>
         return
       case Nil() =>
-        return
-    }
-  }
-
-  @pure def dropDecreasedByN[T](l: List[T], n: Z): Unit = {
-    Contract(
-      Requires(0 <= n, n <= l.length),
-      Ensures(l.drop(n).length == l.length - n)
-    )
-
-    (l: @induct) match {
-      case Cons(value, next) =>
-        if (n > 0) {
-          dropDecreasedByN(next, n - 1)
-          Deduce(|-(next.drop(n - 1).length == next.length - (n - 1)))
-          return
-        } else {
-          return
-        }
-      case Nil() =>
-        Deduce(
-          1 (l.length == 0) by Auto,
-          2 (n == 0) by Auto
-        )
         return
     }
   }
@@ -118,17 +93,17 @@ object List {
     (x: @induct) match {
       case Cons(value, next) =>
         Deduce(
-          1 (  (Cons(value, next) ++ y) ≡ Cons(value, next ++ y)                               ) by Simpl,
-          2 (  ((Cons(value, next) ++ y) ++ z) ≡ (Cons(value, next ++ y) ++ z)                 ) by Simpl,
-          3 (  (Cons(value, next ++ y) ++ z) ≡ Cons(value, next ++ y ++ z)                     ) by Simpl,
-          4 Assert(  (Cons(value, next ++ y) ++ z) ≡ Cons(value, next ++ (y ++ z)), SubProof(
-            5 (  (next ++ y ++ z) ≡ (next ++ (y ++ z))                                         ) by Premise,
-            6 (  (Cons(value, next ++ y) ++ z) ≡ Cons(value, next ++ (y ++ z))                 ) by Subst_<(5, 3)
+          1 ((Cons(value, next) ++ y) ≡ Cons(value, next ++ y)) by Simpl,
+          2 (((Cons(value, next) ++ y) ++ z) ≡ (Cons(value, next ++ y) ++ z)) by Simpl,
+          3 ((Cons(value, next ++ y) ++ z) ≡ Cons(value, next ++ y ++ z)) by Simpl,
+          4 Assert((Cons(value, next ++ y) ++ z) ≡ Cons(value, next ++ (y ++ z)), SubProof(
+            5 ((next ++ y ++ z) ≡ (next ++ (y ++ z))) by Premise,
+            6 ((Cons(value, next ++ y) ++ z) ≡ Cons(value, next ++ (y ++ z))) by Subst_<(5, 3)
           )),
-          7 (  Cons(value, next ++ (y ++ z)) ≡ (Cons(value, next) ++ (y ++ z))                 ) by Simpl,
-          8 (  x ≡ Cons(value, next)                                                           ) by Premise,
-          9 (  ((Cons(value, next) ++ y) ++ z) ≡ (Cons(value, next) ++ (y ++ z))               ) by Auto,
-          10 (  ((x ++ y) ++ z) ≡ (x ++ (y ++ z))                                              ) by Subst_>(8, 9)
+          7 (Cons(value, next ++ (y ++ z)) ≡ (Cons(value, next) ++ (y ++ z))) by Simpl,
+          8 (x ≡ Cons(value, next)) by Premise,
+          9 (((Cons(value, next) ++ y) ++ z) ≡ (Cons(value, next) ++ (y ++ z))) by Auto,
+          10 (((x ++ y) ++ z) ≡ (x ++ (y ++ z))) by Subst_>(8, 9)
         )
         return
       case Nil() =>
@@ -222,7 +197,6 @@ object List {
     Contract(
       Ensures(l.rev.rev ≡ l)
     )
-
     (l: @induct) match {
       case Cons(value, next) =>
         Deduce(
