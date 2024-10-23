@@ -61,6 +61,8 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   tar xf ~/Downloads/sireum-ive-mac-arm64.tar.xz
   cd ~
   tar xf ~/Downloads/org.sireum.library.m2.zip
+  xattr -rd com.apple.quarantine ~/Applications/Sireum
+  xattr -rd com.apple.quarantine ~/.m2
   ```
 
 * **macOS (amd64)**:
@@ -74,6 +76,8 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   tar xf ~/Downloads/sireum-ive-mac-amd64.tar.xz
   cd ~
   tar xf ~/Downloads/org.sireum.library.m2.zip
+  xattr -rd com.apple.quarantine ~/Applications/Sireum
+  xattr -rd com.apple.quarantine ~/.m2
   ```
 
 
