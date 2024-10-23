@@ -50,8 +50,8 @@ and applications within US aerospace companies.
 
 ## Useful Links
 
-* Tool installation instructions
-* Schedule of Lecture Content and Student Activities
+* [Tool installation instructions](stress24-logika-tool-installation.md)
+* [Schedule of Lecture Content and Student Activities](stress24-logika-schedule-students.md)
 
 Supporting information
 * [Sireum home page](https://sireum.org), including links to Slang and
