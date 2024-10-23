@@ -134,13 +134,7 @@ object Manage_Regulator_Mode_impl_thermostat_regulate_temperature_manage_regulat
           // REQ-MRM-2
           lastRegulatorMode = Isolette_Data_Model.Regulator_Mode.Normal_Regulator_Mode
         }
-        // Seed bug:
-        // else {
-        //  // REQ-MRM-3
-        //  lastRegulatorMode = Isolette_Data_Model.Regulator_Mode.Failed_Regulator_Mode
-       // }
 
-      // otherwise we stay in Init mode
 
       // Transitions from NORMAL Mode
       case Isolette_Data_Model.Regulator_Mode.Normal_Regulator_Mode =>

@@ -112,7 +112,8 @@ object Manage_Heat_Source_impl_thermostat_regulate_temperature_manage_heat_sourc
 
       // ------ NORMAL Mode -------
       case Isolette_Data_Model.Regulator_Mode.Normal_Regulator_Mode =>
-        // example error:  Use the commented out line below with the `+ f32"0.5"` addition.
+        // Activity 3:
+        //   Use the commented out line below with the `+ f32"0.5"` addition.
         //   This implements an incorrect condition for setting the currentCmd variable to Off.
         //   When the currentTemp.value is > upper.value but < upper.value + 0.5, the lastCmd
         //   will retain its previous value (which could be On) -- violating the contract.
@@ -122,7 +123,10 @@ object Manage_Heat_Source_impl_thermostat_regulate_temperature_manage_heat_sourc
           currentCmd = Isolette_Data_Model.On_Off.Off
         } else if (currentTemp.value < lower.value) {
           // REQ-MHS-2
-          // currentCmd = Isolette_Data_Model.On_Off.Off // seeded bug/error
+          // Activity 1:
+          //   - change the line of code below to output an incorrect heat command (Off instead of On)
+          //     and observe the contract violation
+          //   - restore the command to its original value (Onn) and re-verify
           currentCmd = Isolette_Data_Model.On_Off.Onn
         }
 
@@ -135,7 +139,7 @@ object Manage_Heat_Source_impl_thermostat_regulate_temperature_manage_heat_sourc
     }
 
     // -------------- Set values of output ports ------------------
-    // example error:
+    // Activity 2:
     //   - comment out operation below that put's a value on the output port.
     //     This will cause a contract violation stating that the value on the port
     //     (api.heat_control) does not match the computed currentCmd.  Technically,
