@@ -3,15 +3,6 @@
 import org.sireum._
 
 def max2(x:Z, y:Z): Z = {
-  // Exercise 3
-  // Write a contract that captures that constraints represented in the two
-  // assertions below
-  // Note: for an example of contract syntax, see the moveForward method in the
-  //  waypoint-05-contract.sc example
-  Contract(
-    Ensures(Res[Z] == x | Res[Z] == y,
-      x <= Res[Z] & y <= Res[Z])
-  )
   var max: Z = 0
   if (x < y) {
     max = y

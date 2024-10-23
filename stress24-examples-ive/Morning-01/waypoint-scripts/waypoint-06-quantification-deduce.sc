@@ -105,5 +105,5 @@ Deduce(
 
 // Activity
 //   - comment out the antecedent of the sequent in the Deduce block
-//.  - notice that the consequent cannot be proven because, z holds a random value.
-//.    ...without the assumption about
+//.    and then notice that the consequent cannot be proven because, z holds a random value.
+//.    ...without the assumption about z, wayPoint03 could be out of the zone

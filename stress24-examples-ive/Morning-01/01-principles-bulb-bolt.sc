@@ -12,5 +12,5 @@ val z: Z = x + y
 
 assert(z == 3)
 
-// Exercise: Replace the '3' in the assertion above
+// Suggested Exercise: Replace the '3' in the assertion above
 //  with a value that makes the assertion succeed

@@ -10,7 +10,7 @@ x = x + x
 
 assert (x > y)
 
-// Exercise:
+// Suggested Exercise:
 // - Add additional assignments to x and try
 //   to predict the names used for x
 //    Logika's representation of the history (seen in the bulb/fact display)

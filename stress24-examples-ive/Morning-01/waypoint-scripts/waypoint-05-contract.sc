@@ -73,8 +73,12 @@ moveForward(wayPoint01)
 moveForward(WayPoint(50,90,50))
 // moveForward(WayPoint(50,110,50))  // pre-condition is not satisfied (the waypoint is not "inZone")
 
+// Activity: Uncomment the moveForward call about to see that Logika finds a pre-condition violation
+
 // when the method returns, we get to use the facts specified in the post-condition
 assert(wayPoint01moved.y == wayPoint01.y)
+
+
 // Neither of these assertions hold because the Ensures (post-condition) abstracts
 //  the change to the x field (the contract is correct, but doesn't give us complete information)
 // assert(inZone(wayPoint01moved))
