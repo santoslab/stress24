@@ -108,7 +108,7 @@ batch mode).
   
   If the verify.cmd script emits "erroneous errors" on Linux then your distribution may not support the latest version of Z3 (e.g. Ubuntu 20.04, Debian 12). As a workaround you can instruct Sireum to install a compatible Z3 version by modifying the Z3 entry in ``$SIREUM_HOME/versions.properties`` as follows:
 
-  ```org.sireum.version.z3=v4.11.2 ```
+  ```org.sireum.version.z3=4.11.2 ```
 
   You can refer to the Ubuntu 20.04 CI [here](.github/workflows/CI_linux-20-04.yml#L25-L28) for more information.
 
