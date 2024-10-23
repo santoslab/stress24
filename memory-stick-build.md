@@ -1,7 +1,7 @@
-# Stefan Download Request
+# Memory Stick Download
 
 
-## Download for memory stick
+## Download for constructing memory stick for manual install
 
 
   ```shell
