@@ -37,7 +37,9 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
 
 ## Installation
 
-* **Linux (amd64)**:
+**The instructions below are obsolete. Please use the latest release version of Sireum:** https://sireum.org/getting-started/#latest-release-bin
+
+* ~~Linux (amd64)~~:
 
   ```shell
   export SIREUM_V=4.20241017.f6e1eff
@@ -50,7 +52,7 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   unzip -qq xf ~/Downloads/org.sireum.library.m2.zip
   ```
 
-* **macOS (arm64)**:
+* ~~macOS (arm64)~~:
 
   ```shell
   export SIREUM_V=4.20241017.f6e1eff
@@ -65,7 +67,7 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   xattr -rd com.apple.quarantine ~/.m2
   ```
 
-* **macOS (amd64)**:
+* ~~macOS (amd64)~~:
 
   ```shell
   export SIREUM_V=4.20241017.f6e1eff
@@ -81,7 +83,7 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   ```
 
 
-* **Windows (amd64)**:
+* ~~Windows (amd64)~~:
 
   ```shell
   set SIREUM_V=4.20241017.f6e1eff
@@ -96,12 +98,14 @@ Slang, Logika, and HAMR will be discussed extensively during the lectures.
   
 ## Testing Installation
 
+**The instructions below are obsolete. Please follow the instructions at:** https://sireum.org/getting-started/#using-sireum
+
 It will be helpful if you can test your installation.  To do this, you
 can retrieve (via git clone) a repository of Logika examples and then
 run a script that applies Logika to verify all of the examples (in
 batch mode).
 
-* **macOS/Linux**:
+* ~~macOS/Linux~~:
 
   ```shell
   export SIREUM_HOME=~/Applications/Sireum
@@ -116,7 +120,7 @@ batch mode).
 
   You can refer to the Ubuntu 20.04 CI [here](.github/workflows/CI_linux-20-04.yml#L25-L28) for more information.
 
-* **Windows**:
+* ~~Windows~~:
   
   ```shell
   set SIREUM_HOME=%USERPROFILE%\Applications\Sireum
